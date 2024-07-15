@@ -2,7 +2,7 @@
 title: 教程 · 基岩版
 description: 教程 · 基岩版
 published: true
-date: 2024-07-15T07:14:35.603Z
+date: 2024-07-15T09:27:03.569Z
 tags: 
 editor: markdown
 dateCreated: 2024-07-15T07:14:35.603Z
@@ -10,7 +10,7 @@ dateCreated: 2024-07-15T07:14:35.603Z
 
 # 教程 · 基岩版
 
-> [!IMPORTANT]
+> [IMPORTANT]
 > 请注意，本服务器为互通服务器，请务必确保自己的游玩方式符合您的预期，谢谢理解。
 
 ## 1. 安装 Minecraft
