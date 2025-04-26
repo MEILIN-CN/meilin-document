@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梅林服务器</title>
+    <link rel="icon" href="./img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="server-status.js"></script>
+</head>
+<style>
+    /* 全局防止水平滚动 */
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    /* 图片显示优化 */
+    img {
+        object-fit: cover;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 背景图片优化 */
+    .hero-section {
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<body class="bg-white">
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div style="max-width: 150px; height: auto;">
+                        <img src="./img/logo.jpg" alt="Logo" style="width: 100%; height: auto; max-width: 150px;">
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-primary">特色</a>
+                    <a href="#mcip" class="text-gray-700 hover:text-primary">服务器IP</a>
+                    <a href="#advantages" class="text-gray-700 hover:text-primary">优势</a>
+                    <a href="#team" class="text-gray-700 hover:text-primary">团队</a>
+                </div>
+                <a href="#mcip" class="!rounded-button bg-primary text-white px-6 py-2 whitespace-nowrap">立即加入</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 汉堡菜单内容 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-16 w-full z-40">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <a href="#features" class="block text-gray-700 hover:text-primary my-2">特色</a>
+            <a href="#mcip" class="block text-gray-700 hover:text-primary my-2">服务器IP</a>
+            <a href="#advantages" class="block text-gray-700 hover:text-primary my-2">优势</a>
+            <a href="#team" class="block text-gray-700 hover:text-primary my-2">团队</a>
+            <a href="#faq" class="block text-gray-700 hover:text-primary my-2">常见问题</a>
+            <!-- 将按钮移动到汉堡菜单中 -->
+            <a href="#features" class="block !rounded-button bg-primary text-white px-6 py-2 my-2">立即加入</a>
+        </div>
+    </div>
+
+    <script>
+        // 汉堡菜单切换逻辑
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+<section class="hero-section h-screen flex items-center justify-center relative text-center text-white overflow-hidden">
+    <img src="./img/banner.png"
+        class="absolute top-0 left-0 h-full w-full object-cover object-center z-0 transition-all scale-[1.05] overflow-hidden" />
+    <div class="max-w-4xl mx-auto px-4 absolute z-1">
+        <h1 class="text-6xl font-bold mb-6 text-shadow">梅林服务器</h1>
+        <p class="text-xl mb-8 text-shadow-xl">探索无限可能，创造你的传奇</p>
+        <a href="https://qm.qq.com/q/jVlmQyDore" class="!rounded-button bg-primary text-white px-8 py-3 text-lg whitespace-nowrap">开始游戏</a>
+    </div>
+</section>
+
+
+<section id="features" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16">服务器特色</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="feature-card bg-white p-8 rounded-lg shadow-lg">
+                <img src="./img/创世神.png" class="w-full h-48 object-cover rounded-lg mb-6" alt="特色功能">
+                <h3 class="text-xl font-bold mb-4">创世神</h3>
+                <p class="text-gray-600">在拥有创世神的世界里，尽情创造你想要的建筑吧</p>
+            </div>
+            <div class="feature-card bg-white p-8 rounded-lg shadow-lg">
+                <img src="./img/res.jpg" class="w-full h-48 object-cover rounded-lg mb-6" alt="特色功能">
+                <h3 class="text-xl font-bold mb-4">自由建筑</h3>
+                <p class="text-gray-600">在这里每一个人都可以创造自己想要的建筑</p>
+            </div>
+            <div class="feature-card bg-white p-8 rounded-lg shadow-lg">
+                <img src="./img/geyser.png" class="w-full h-48 object-cover rounded-lg mb-6" alt="特色功能">
+                <h3 class="text-xl font-bold mb-4">双端支持</h3>
+                <p class="text-gray-600">支持java和基岩双端，手机电脑均可加入。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="mcip">
+    <div class="bg-primary/5 px-4 text-center py-20">
+        <h2 class="text-4xl font-bold mb-8">服务器地址</h2>
+        <div class="inline-flex items-center gap-4 bg-white px-8 py-4 rounded-lg shadow-sm">
+            <span id="ip-text" class="text-2xl font-mono">play.bioc.fun:4833</span>
+            <button id="copy-ip"
+                class="px-4 py-2 bg-primary text-white !rounded-button hover:bg-primary/90 whitespace-nowrap">
+                <i class="far fa-copy mr-2"></i>复制
+            </button>
+        </div>
+        <!-- 延迟信息 -->
+        <div class="mt-4 text-gray-600">
+            <span>延迟: <small id="delay" class="text-green-600 font-medium">正在检测...</small></span>
+            <br>
+            <span>游戏人数:<small id="online" class="text-green-600 font-medium">等待加载</small>/<small id="max"
+                    class="text-green-600 font-medium"></small></span>
+        </div>
+        <p class="mt-6 text-gray-600">支持 Java 版本 1.8 - 1.20，自动识别客户端版本</p>
+    </div>
+</section>
+
+<section id="advantages" class="py-12 bg-gray-50">
+    <div class="max-w-[1440px] mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">为什么选择我们？</h2>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+            <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-server text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">高性能服务器</h3>
+                <p class="text-gray-600">采用位于霄龙EPYC 7443，确保游戏流畅运行</p>
+            </div>
+            <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">完善的防护系统</h3>
+                <p class="text-gray-600">拥有回档插件，防止你的建筑破坏</p>
+            </div>
+            <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-headset text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">24/7 在线支持</h3>
+                <p class="text-gray-600">管理随时在线解答你的问题</p>
+            </div>
+            <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-sync text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">娱乐活动</h3>
+                <p class="text-gray-600">举办有趣的娱乐活动带给你不一样的体验</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16">管理团队</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 teams">
+            <div class="team-member bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./img/ShodThrone57604.jpg" class="w-32 h-32 rounded-full mx-auto mb-4" alt="管理员">
+                <h3 class="text-xl font-bold">ShodThrone57604</h3>
+                <p class="text-gray-600">腐竹</p>
+            </div>
+            <div class="team-member bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./img/Touxsoft233.jpg" class="w-32 h-32 rounded-full mx-auto mb-4" alt="管理员">
+                <h3 class="text-xl font-bold">Touxsoft233</h3>
+                <p class="text-gray-600">腐竹</p>
+                <a href="https://space.bilibili.com/639387881">
+                    <i class="fa-brands fa-bilibili"></i>
+                </a>
+
+            </div>
+            <div class="team-member bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./img/Slide2-shutdown.jpg" class="w-32 h-32 rounded-full mx-auto mb-4" alt="管理员">
+                <h3 class="text-xl font-bold">Slide2-shutdown</h3>
+                <p class="text-gray-600">管理</p>
+                <a href="https://space.bilibili.com/1911673628">
+                    <i class="fa-brands fa-bilibili"></i>
+                </a>
+                <a href="https://space.bilibili.com/1661387115">
+                    <i class="fa-brands fa-bilibili"></i>
+                </a>
+            </div>
+            <div class="team-member bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./img/ArchiFei.jpg" class="w-32 h-32 rounded-full mx-auto mb-4" alt="管理员">
+                <h3 class="text-xl font-bold">ArchiFei</h3>
+                <p class="text-gray-600">管理</p>
+                <a href="https://space.bilibili.com/1568172610">
+                    <i class="fa-brands fa-bilibili"></i>
+                </a>
+            </div>
+            <div class="team-member bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./img/ChocoblueWU.jpg" class="w-32 h-32 rounded-full mx-auto mb-4" alt="管理员">
+                <h3 class="text-xl font-bold">ChocoblueWU</h3>
+                <p class="text-gray-600">管理</p>
+                <a href="https://space.bilibili.com/667759226">
+                    <i class="fa-brands fa-bilibili"></i>
+                </a>
+                <a href="https://www.instagram.com/chocobluewu">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/ChocoblueCHN">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://weibo.com/u/7767291206">
+                    <i class="fa-brands fa-weibo"></i>
+                </a>
+            </div>
+            <div class="team-member bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./img/冬烟mio.jpg" class="w-32 h-32 rounded-full mx-auto mb-4" alt="管理员">
+                <h3 class="text-xl font-bold">冬烟mio</h3>
+                <p class="text-gray-600">技术</p>
+                <a href="https://space.bilibili.com/549736250/">
+                    <i class="fa-brands fa-bilibili"></i>
+                </a>
+                <a href="https://github.com/Dongyanmio/">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+            <div class="team-member bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./img/zzh4141.jpg" class="w-32 h-32 rounded-full mx-auto mb-4" alt="管理员">
+                <h3 class="text-xl font-bold">zzh4141</h3>
+                <p class="text-gray-600">技术</p>
+                <a href="https://space.bilibili.com/1307979175/">
+                    <i class="fa-brands fa-bilibili"></i>
+                </a>
+                <a href="https://github.com/zzh4141">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="text-center md:text-left"> <!-- 添加 text-center，确保在手机端居中 -->
+                <img src="./img/lo.png" alt="Logo" class="w-60 h-30 mx-auto md:mx-0"> <!-- 添加 mx-auto，确保在手机端水平居中 -->
+                <p class="mt-4 text-gray-400">创造属于你的 Minecraft 建筑</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">快速链接</h4>
+                <ul class="space-y-2">
+                    <li><a href="#features" class="text-gray-400 hover:text-white">服务器特色</a></li>
+                    <li><a href="#rules" class="text-gray-400 hover:text-white">服务器规则</a></li>
+                    <li><a href="#team" class="text-gray-400 hover:text-white">管理团队</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">加入我们</h4>
+                <ul class="space-y-2">
+                    <li class="text-gray-400">QQ群：<a href="https://qm.qq.com/q/jVlmQyDore" target="_blank">665661136</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">关注我们</h4>
+                <div class="flex space-x-4">
+                    <a href="https://qm.qq.com/q/jVlmQyDore" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-qq text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>© 2025 梅林服务器. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTop"
+    class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <i class="fas fa-arrow-up"></i>
+</button>
+</body>
+
+</html>
