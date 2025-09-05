@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@types/dom-view-transitions": "^1.0.6",
+    "busuanzi.pure.js": "^1.0.3",
+    "medium-zoom": "^1.1.0",
+    "nprogress-v2": "^1.1.10",
+    "vitepress": "1.6.4",
+    "vitepress-plugin-comment-with-giscus": "^1.1.15"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  }
+}
